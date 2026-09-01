@@ -3,6 +3,7 @@
 import { useState } from "react";
 import MobileMenu from "./MobileMenu";
 import { Menu } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +24,14 @@ export default function Navbar() {
             href="/"
             className="justify-self-center font-display text-3xl tracking-[0.16em]"
           >
-            MEDUSA
+            <Image
+              src="/logoMedusa.png"
+              alt="Logo MEDUSA"
+              width={120}
+              height={40}
+              className="h-auto w-full object-contain"
+              priority
+            />
           </a>
 
           <a
