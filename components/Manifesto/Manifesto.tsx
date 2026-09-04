@@ -54,7 +54,7 @@ export default function Manifesto() {
 
           <div className="max-w-3xl">
             <h2
-              className={`font-display text-5xl leading-[0.95] tracking-[-0.02em] transition-all delay-150 duration-1000 sm:text-6xl ${
+              className={`text-5xl leading-[0.95] tracking-[-0.02em] transition-all delay-150 duration-1000 sm:text-6xl ${
                 isVisible
                   ? "translate-y-0 opacity-100"
                   : "translate-y-10 opacity-0"
