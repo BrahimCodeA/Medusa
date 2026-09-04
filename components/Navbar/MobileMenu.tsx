@@ -10,7 +10,7 @@ interface MobileMenuProps {
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   return (
     <div
-      className={`fixed h-full w-full inset-0 z-[60] flex min-h-screen flex-col bg-[#171512] px-6 py-6 text-[#f4f0e8] transition-all duration-300 ease-out ${
+      className={`fixed inset-0 z-[1000] flex min-h-screen flex-col bg-[#171512] px-6 py-6 text-[#f4f0e8] transition-all duration-300 ease-out ${
         isOpen ? "visible opacity-100" : "invisible opacity-0"
       }`}
     >

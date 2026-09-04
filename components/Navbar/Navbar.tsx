@@ -1,16 +1,37 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MobileMenu from "./MobileMenu";
 import { Menu } from "lucide-react";
 import Image from "next/image";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isPastHero, setIsPastHero] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsPastHero(window.scrollY >= window.innerHeight);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-[50]">
+      <header
+        className={`fixed inset-x-0 top-0 z-[100] transition-all duration-500 ${
+          isPastHero
+            ? "bg-gradient-to-b from-[#12110f]/80 via-[#12110f]/60 to-transparent backdrop-blur-md"
+            : "bg-transparent"
+        }`}
+      >
         <nav className="grid grid-cols-3 items-center px-5 py-5 text-[#f4f0e8]">
           <button
             onClick={() => setIsMenuOpen(true)}

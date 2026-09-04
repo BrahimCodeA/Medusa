@@ -14,3 +14,10 @@ body {
 .font-display {
   font-family: var(--font-cormorant), serif;
 }
+
+.site-container {
+  width: 100%;
+  max-width: 64rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
