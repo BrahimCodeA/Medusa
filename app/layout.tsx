@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter, Cinzel_Decorative } from "next/font/google";
+
 import "./globals.css";
+import Navbar from "@/components/Navbar/Navbar";
 
 const cinzel = Cinzel_Decorative({
   variable: "--font-cinzel",
@@ -30,10 +32,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
+    <html lang="fr" className="scroll-smooth">
       <body
         className={`${cormorant.variable} ${inter.variable} ${cinzel.variable}`}
       >
+        <Navbar />
         {children}
       </body>
     </html>

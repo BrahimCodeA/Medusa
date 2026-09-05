@@ -1,48 +1,17 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
+import SectionMonogram from "../ui/SectionMonogram";
 import { menuItems } from "./menuItems";
 
 export default function Menu() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      {
-        threshold: 0.2,
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section
-      ref={sectionRef}
+      id="menu"
       className="relative overflow-hidden px-6 py-24 md:px-20 site-container"
     >
-      <span
-        aria-hidden="true"
-        className={`pointer-events-none absolute right-6 top-16 font-display text-[220px] leading-none text-[#171512]/[0.025] transition-all duration-1000 md:text-[320px] ${
-          isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-        }`}
-      >
-        S
-      </span>
+      <SectionMonogram letter="S" />
 
       <div className="relative z-10 mx-auto max-w-4xl">
         <p className="mb-2 font-sans text-sm tracking-widest text-neutral-500">
-          04 · La carte
+          03 · La carte
         </p>
 
         <h2 className="mb-16 text-4xl text-neutral-900 md:text-5xl">
@@ -88,6 +57,34 @@ export default function Menu() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="mt-20 border-t border-neutral-300 pt-8">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.25em] text-[#8b7455]">
+                Et bien plus encore
+              </p>
+
+              <p className="mt-2 font-sans text-sm text-neutral-500">
+                Découvrez l&apos;ensemble de nos plats et de nos créations.
+              </p>
+            </div>
+
+            <a
+              href="/menu-medusa.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex w-fit items-center gap-4 text-[10px] uppercase tracking-[0.22em] text-[#171512]"
+            >
+              <span className="border-b border-[#171512] pb-1">
+                Voir la carte complète
+              </span>
+
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
+                ↗
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </section>

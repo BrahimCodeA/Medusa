@@ -1,35 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import DishLightbox from "./DishLightbox";
 import { dishes } from "./dishes";
+import SectionMonogram from "../ui/SectionMonogram";
 
 export default function DishCarousel() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
   const [current, setCurrent] = useState(0);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      {
-        threshold: 0.2,
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     if (selectedImage) return;
@@ -44,17 +23,10 @@ export default function DishCarousel() {
   return (
     <>
       <section
-        ref={sectionRef}
+        id="dishes"
         className="relative overflow-hidden bg-[#f4f0e8] py-20 md:py-28"
       >
-        <span
-          aria-hidden="true"
-          className={`pointer-events-none absolute right-6 top-16 font-display text-[220px] leading-none text-[#171512]/[0.025] transition-all duration-1000 md:text-[320px] ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-          }`}
-        >
-          T
-        </span>
+        <SectionMonogram letter="R" />
 
         <div className="site-container relative z-10">
           <div className="mb-8 flex items-end justify-between">

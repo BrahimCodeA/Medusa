@@ -1,6 +1,6 @@
 export const navLinks = [
-  { label: "La carte", href: "#carte" },
-  { label: "L'expérience", href: "#experience" },
+  { label: "L'expérience", href: "#manifesto" },
+  { label: "Signature", href: "#dishes" },
+  { label: "La carte", href: "#menu" },
   { label: "Le restaurant", href: "#restaurant" },
-  { label: "Contact", href: "#contact" },
 ];
