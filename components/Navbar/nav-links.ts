@@ -3,4 +3,5 @@ export const navLinks = [
   { label: "Signature", href: "#dishes" },
   { label: "La carte", href: "#menu" },
   { label: "Le restaurant", href: "#restaurant" },
+  { label: "Contact", href: "#contact" },
 ];

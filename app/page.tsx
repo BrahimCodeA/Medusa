@@ -3,6 +3,7 @@ import Manifesto from "@/components/Manifesto/Manifesto";
 import DishCarousel from "@/components/DishCarousel/DishCarousel";
 import RestaurantInfo from "@/components/RestaurantInfo/RestaurantInfo";
 import Menu from "@/components/Menu/Menu";
+import Contact from "@/components/Contact/Contact";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <DishCarousel />
       <Menu />
       <RestaurantInfo />
+      <Contact />
     </>
   );
 }
