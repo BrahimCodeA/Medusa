@@ -170,7 +170,7 @@ export default function RestaurantInfo() {
           {/* Google Maps */}
           <div className="relative mt-12 h-[400px] w-full overflow-hidden rounded-3xl shadow-2xl">
             <iframe
-              src="TON_URL_GOOGLE_MAPS"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.51880085226!2d2.358652411609926!3d48.86738569995442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e0f38d7d57f%3A0x810d90c5ebfe58e0!2s11%20Rue%20Meslay%2C%2075003%20Paris!5e0!3m2!1sfr!2sfr!4v1788753907470!5m2!1sfr!2sfr"
               title="Localisation du restaurant MEDUSA"
               className="h-full w-full"
               loading="lazy"
