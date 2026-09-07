@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Inter, Cinzel_Decorative } from "next/font/google";
 
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 const cinzel = Cinzel_Decorative({
   variable: "--font-cinzel",
@@ -38,6 +39,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
